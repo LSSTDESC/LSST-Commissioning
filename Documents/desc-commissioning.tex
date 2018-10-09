@@ -14,13 +14,9 @@
 \date{\today}
 
 \begin{abstract}
-  In this DESC note we suggest survey fields and tests that the
-  commissioning team can employ during both the ComCam and LSST Camera
-  commissioning periods. These fields and tests will cover a range of
-  times of year and will supply important test data to validate that
-  all DESC science goals are being met. Many of the tests are
-  implementation descriptions of requirements as specified in the DESC
-  SRC~\cite{DESC-SRD}. \end{abstract}
+In this DESC note we suggest tests and survey fields that the commissioning team can employ during both the ComCam and LSST Camera commissioning periods. These fields and tests will cover a range of times of year and will supply important test data to validate that all DESC science goals are being met. Many of the tests are implementation descriptions of requirements as specified in the DESC SRC~\cite{DESC-SRD}.  Detailed descriptions of the tests including associated code are described.
+\end{abstract}
+
 \maketitle
 
 \noindent
@@ -36,58 +32,112 @@
 
 Let's all enjoy commissioning the LSST.
 
-\section{Summary of project tests}
+This document details a set of validation tests and procedures proposed to be taken during the LSST commissioning period to ensure that the DESC can achieve its science goals.  As explained in Section~\ref{sec:project-tests} the tests currently being planned by the project commissioning team will assure that the LSST achieves its overall design goals. However, those requirements are not exhaustive and won't necessarily ensure that the end-to-end system will meet all DESC requirements.  By suggesting detailed tests of our own we can get early feedback on what if any modifications to our pipelines or strategy might be necessary to ensure we meet them.
 
-What LSST Project is planning on verifying (the normative
-requirements, e.g., OSS, LSR, Project SRD). The project knows that the
-formal verification requirements are not exhaustive and welcomes input
-on validation studies, i.e., test specifications that go beyond the
-normative requirements. The project would also welcome input on the
-observations that would be done during commissioning although it
-cannot guarantee that all suggestions will be undertaken.
+Additionally, a selection of proposed observing fields staged throughout the year, would be welcome input to project if already planned observations could be made in them which fulfilled both sets of goals.
 
+Many of the DESC requirements are already specified in the DESC SRC~\cite{DESC-SRD}.  In this document we will give detailed recipes for how to study how well we are meeting the requirements during the commissioning period including when possible suggested observations and test code.
 
+\section{Summary of Planned Project Tests}
+\label{sec:project-tests}
+
+The LSST Project has a well defined commissioning plan~\cite{?} and is planning on verifying the basic project requirements that will show that the instrument is operating as designed.  These requirements are specified in a set of project documents ( e.g., OSS~\cite{?}, LSR~\cite{?}, Project SRD~\cite{?}). The project understands that the formal verification requirements are not exhaustive and welcomes input on validation studies, i.e., test specifications that go beyond the normative requirements. The project would also welcome input on the observations that would be done during commissioning. It can however, not guarantee that all suggestions will be undertaken.
+
+{\it [Should we list current planned tests here so as to make sure we don't have overlaps and give people a sense of what tests might also be able to use suggested fields?  OTOH this could be quite a long list?  Some template language if we want to do this below:] }
+
+Here we list currently planned tests to be undertaken by the project science validation team along with links to more detailed information.  The purpose of including this list is two-fold: first, to avoid duplication in newly suggested tests and second to understand which new suggested observation fields might usable for these tests which are already planned.
+
+\noindent
+{\bf List of currently planned project requirement tests}
 \begin{enumerate}
-\item Test A
-\item Test B
+\item Prove that pie is better than cake.
+\item Eat more pie.
 \end{enumerate}
 
 \section{DESC Commissioning Tests}
 
-What other tests do we need. What is the plot you would put in your paper to show that you could do the science you are going to report in the paper. What are the null tests etc.
+If you were writing a DESC paper, what plot would you put in into your paper to show that you could do the science you are going to report? What null tests would you demonstrate?  What performance metrics would you highlight?  The goal of the commissioning tests are to systematically undertake those tests early.  Here we would like to tie detailed requirement from the DESC SRC to specific tests and observations.
+
+In each section below detailed requirements taken from the DESC SRD are listed for each probe.  Currently the 10 year requirement (rather than the Y1 goal) is listed.  It is likely not possible to test all of these requirements directly.  Rather, you should try to design a test that would be possible during the commissioning period that would measure the relevant quantities and decide on a metric we can use to decide if the performance is good enough.
+
+{\it Instructions: For each group start by writing and introduction for your section of what you would like to test.  Then based on some of the guidelines in Appendix A. try to outline tests that would correspond to each requirement specified in the DESC SRD.}
 
 \subsection{Large Scale Structure}
+
+\begin{itemize}
+\item Systematic uncertainty in the mean redshift of each tomographic bin shall not exceed $0.003 (1 + z)$ in the Y10 DESC LSS analysis.
+\item Systematic uncertainty in the photometric redshift scatter $\sigma_z$ shall not exceed $0.03 (1 + z)$ in the Y10 DESC LSS analysis.
+\end{itemize}
+
 \subsection{Weak Lensing (3x2pt)}
+
+\begin{itemize}
+\item Systematic uncertainty in the mean redshift of each source tomographic bin shall not exceed $0.001 (1 + z)$ in the Y10 DESC WL analysis.
+\item Systematic uncertainty in the source photometric redshift scatter $\sigma_z$  shall not exceed $0.003 (1 + z) $ in the Y10 DESC WL analysis.
+\item Systematic uncertainty in the redshift-dependent shear calibration shall not exceed 0.003 in the Y10 DESC WL analysis.
+\item Systematic uncertainty in the PSF model size defined using the trace of the second moment matrix shall not exceed 0.1\% in the Y10 DESC WL analysis.
+\item Systematic uncertainty in the stellar contamination of the source sample shall not exceed 0.1\% in the Y10 DESC WL analysis.
+\end{itemize}
+
 \subsection{Galaxy clusters}
+
+\begin{itemize}
+\item Systematic uncertainty in the mean redshift of each source tomographic bin shall not exceed $ 0.001( 1 + z)$ in the Y10 DESC CL analysis.
+\item Systematic uncertainty in the source photometric redshift scatter shall not exceed $0.005 (1 + z)$ in the Y10 DESC CL analysis.
+\item Systematic uncertainty in the redshift-dependent shear calibration shall not exceed 0.008 in the Y10 DESC CL analysis.
+\end{itemize}
+
 \subsection{Supernovae}
+
+
+\begin{itemize}
+\item Systematic uncertainty in the griz-filter zero points shall not exceed 1 mmag in the Y10 DESC SN analysis. As the griz requirements represent an ambitious improvement versus the LSST SRD (5 mmag in griz), an alternative way to meet this requirement is to improve our analysis methods for all probes until the LSST SRD requirement is sufficient.
+\item Systematic uncertainty in the griz-filter mean wavelength shall not exceed 1\AA{} in the Y10 DESC SN analysis.
+\item  Systematic uncertainty in the wavelength-dependent flux calibration shall not exceed a slope of 4.4 mmag per 5500\AA{} in wavelength in the Y10 DESC SN analysis.
+\item Systematic uncertainty in the light curve modeling should not exceed 22\% of current SALT2 model errors in the Y1 DESC SN analysis.
+\item Detailed requirement SN5 (Y10): Systematic uncertainty in Milky Way extinction corrections shall not exceed 30\% of current systematic Galactic extinction uncertainties in the Y10 DESC SN analysis.
+\end{itemize}
+
+
 \subsection{Strong Lensing}
+
+The DESC SRD does not currently specify any requirements on Strong Lensing.
+
 \subsection{Combined Probes and other requirements}
 
-Technical tests that are not covered by the science cases above.
+The DESC SRD does currently define any relevant requirements for commissioning.
+
+\vspace{1.0in}
+
+There may be other tests that are not currently covered by the science cases above that we should specify.  They are enumerated below.
+
+{\it [Please fill in as needed.]}
 
 \subsection{End-to-End and other tests}
 \subsection{Photo-metric Calibration}
 \subsection{Sensor related tests}
 
 \appendix
+\section{Test Templates}
 
-Value added tests that can be done with the data
+What makes a good test?  Here we list the properties necessary to complete specify a test and to allow others to carry it out if necessary.
 
-What makes a good test?
-
+{\bf Characteristics of tests }
 \begin{enumerate}
-\item Clearly defined set of observations (including fields, filters, observing strategy)
-\item Image measurements that will be undertaken that are different than those in the DPDD (if any)
-\item Additional data sets required as input to the test or metric
-\item Metric/test that would be applied to the data
-\item Value (or plot) that we would need to achieve
-\item Notebooks for the test
+\item Clearly defined set of observations (including fields, filters, observing strategy).
+\item Image measurements that will be undertaken that are different than those in the DPDD (if any).
+\item Additional data sets required as input to the test or metric.
+\item Metric/test that would be applied to the data.
+\item Description of Value or plot  that we would like to produce.
+\item Sample notebooks for the test with simulation or pre-cursor data.
 \end{enumerate}
 
+{\it [We should make a template that everyone can follow so that we have a consistent set of tests.]}
+
 \begin{acknowledgments}
-% \input{desc-tex/ack/standard}
+\input{desc-tex/ack/standard}
 \end{acknowledgments}
-  
+
 \bibliography{desc-tex/bib/lsstdesc}
 
 \end{document}
