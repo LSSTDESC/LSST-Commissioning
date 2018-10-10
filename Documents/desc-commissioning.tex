@@ -14,8 +14,8 @@
 \date{\today}
 
 \begin{abstract}
-In this DESC note we suggest tests and survey fields that the commissioning team can employ during both the ComCam and LSST Camera commissioning periods. These fields and tests will cover a range of times of year and will supply important test data to validate that all DESC science goals are being met. Many of the tests are implementation descriptions of requirements as specified in the DESC SRC~\cite{DESC-SRD}.  Detailed descriptions of the tests including associated code are described.
-\end{abstract}
+
+  This DESC note presents validation tests and suggested survey fields that the LSST commissioning team can employ during both the ComCam and LSST Camera commissioning periods. These fields and tests will cover a range of times of year and will test the in-place system to confirm that DESC science goals can being either be met as is or suggest modifications in software and/or strategy.  Many of the tests are based on requirements as specified in the DESC SRD~\cite{DESC-SRD}.  Detailed descriptions of the tests including associated code are described.  \end{abstract}
 
 \maketitle
 
@@ -34,14 +34,12 @@ Let's all enjoy commissioning the LSST.
 
 This document details a set of validation tests and procedures proposed to be taken during the LSST commissioning period to ensure that the DESC can achieve its science goals.  As explained in Section~\ref{sec:project-tests} the tests currently being planned by the project commissioning team will assure that the LSST achieves its overall design goals. However, those requirements are not exhaustive and won't necessarily ensure that the end-to-end system will meet all DESC requirements.  By suggesting detailed tests of our own we can get early feedback on what if any modifications to our pipelines or strategy might be necessary to ensure we meet them.
 
-Additionally, a selection of proposed observing fields staged throughout the year, would be welcome input to project if already planned observations could be made in them which fulfilled both sets of goals.
-
-Many of the DESC requirements are already specified in the DESC SRC~\cite{DESC-SRD}.  In this document we will give detailed recipes for how to study how well we are meeting the requirements during the commissioning period including when possible suggested observations and test code.
+Additionally, a selection of proposed observing fields staged throughout the year, would be welcome input to the project if already planned observations could be made in them which fulfilled both sets of goals.  Many of the high level DESC requirements are specified in the DESC SRD~\cite{DESC-SRD}.  In this document, we  give detailed recipes based on those requirements designed to study how well those goals are being met. We also, when possible, suggest observations fields and supply test code.
 
 \section{Summary of Planned Project Tests}
 \label{sec:project-tests}
 
-The LSST Project has a well defined commissioning plan~\cite{?} and is planning on verifying the basic project requirements that will show that the instrument is operating as designed.  These requirements are specified in a set of project documents ( e.g., OSS~\cite{?}, LSR~\cite{?}, Project SRD~\cite{?}). The project understands that the formal verification requirements are not exhaustive and welcomes input on validation studies, i.e., test specifications that go beyond the normative requirements. The project would also welcome input on the observations that would be done during commissioning. It can however, not guarantee that all suggestions will be undertaken.
+The LSST Project has a well defined commissioning plan~\cite{?} and is planning on verifying that the instrument is operating as designed.  These requirements are specified in a set of project documents ( e.g., OSS~\cite{?}, LSR~\cite{?}, Project SRD~\cite{?}). The project understands that the formal verification requirements are not exhaustive and welcomes input on validation studies, i.e., test specifications that go beyond the normative requirements. The project would also welcome input on the observations that would be done during commissioning. It can however, not guarantee that all suggestions will be undertaken.
 
 {\it [Should we list current planned tests here so as to make sure we don't have overlaps and give people a sense of what tests might also be able to use suggested fields?  OTOH this could be quite a long list?  Some template language if we want to do this below:] }
 
@@ -52,6 +50,7 @@ Here we list currently planned tests to be undertaken by the project science val
 \begin{enumerate}
 \item Prove that pie is better than cake.
 \item Eat more pie.
+\item I don't care what you say, pie is better than cake.
 \end{enumerate}
 
 \section{DESC Commissioning Tests}
@@ -60,7 +59,7 @@ If you were writing a DESC paper, what plot would you put in into your paper to 
 
 In each section below detailed requirements taken from the DESC SRD are listed for each probe.  Currently the 10 year requirement (rather than the Y1 goal) is listed.  It is likely not possible to test all of these requirements directly.  Rather, you should try to design a test that would be possible during the commissioning period that would measure the relevant quantities and decide on a metric we can use to decide if the performance is good enough.
 
-{\it Instructions: For each group start by writing and introduction for your section of what you would like to test.  Then based on some of the guidelines in Appendix A. try to outline tests that would correspond to each requirement specified in the DESC SRD.}
+{\it Instructions: For each group start by writing and introduction for your section of what you would like to test.  Then based on some of the guidelines in Appendix A. try to outline tests that would correspond to each requirement specified in the DESC SRD. Are there important requirements either not in the DESC SRD or associated project documents?  If so, let's try to write down those tests also.}
 
 \subsection{Large Scale Structure}
 
@@ -114,7 +113,7 @@ There may be other tests that are not currently covered by the science cases abo
 {\it [Please fill in as needed.]}
 
 \subsection{End-to-End and other tests}
-\subsection{Photo-metric Calibration}
+\subsection{Photometric Calibration}
 \subsection{Sensor related tests}
 
 \appendix
