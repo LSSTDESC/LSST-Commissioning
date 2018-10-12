@@ -38,8 +38,41 @@ This document details a set of validation tests and procedures proposed to be ta
 
 Additionally, a selection of proposed observing fields staged throughout the year, would be welcome input to the project if already planned observations could be made in them which fulfilled both sets of goals.  Many of the high level DESC requirements are specified in the DESC SRD~\cite{DESC-SRD}.  In this document, we  give detailed recipes based on those requirements designed to study how well those goals are being met. We also, when possible, suggest observations fields and supply test code.
 
+\subsection{DESC Commissioning Goals and Document Audience}
+
+Within the LSST project there are many requirements that must be tested formally in order to close out the construction project with the agencies and start the full survey. These requirements are specified in a set of project documents and are being built into a schedule of activities during the commissioning period. However, there is some flexibility in exactly how the on-sky observations are implemented, and the goal is to take data that will allow the LSST project and  the broader LSST community to optimize the operations of LSST from of scientific standpoint and also to enable validation tests that go beyond the normative requirements that have been written down for the project.
+
+The DESC can give very useful input to the project by:
+
+\begin{itemize}
+
+\item  Specifying the highest priority validation studies related to data quality that could be undertaken with commissioning data to ensure the DESC can meet its science goals.  Here we refer not to data reduction and algorithmic improvements but rather the quality of the raw exposures themselves.
+
+\item Suppling the project with strategies for analyzing the commissioning data to optimize operations, broadly defined (survey strategy, observatory operations, science pipelines, etc.)
+
+\item Supplying suggested sets of suggested observation fields, as the project has flexibility in what observations are made and the time of year for given tests is not yet known.  Suggested fields should be supplied with justifications for the particular choice such as the presence of external reference catalogs, testing of a particular systematic, and so forth.
+  
+\end{itemize}
+
+Then the DESC itself has a set of requirements which have been specified in the DESC SRD in order to meet our science goals with are often based on pipelines and algorithms which can be improved as the survey progresses. There is substantial overlap with the goals outlined above.  In the case of DESC specific needs commissioning goals include:
+
+\begin{itemize}
+
+\item Placing quantitative requirements for DESC science on quantities such as galaxy shapes, galaxy detection completeness, galaxy photometry, deblending, photometric redshifts, star-galaxy separation, photometry for transients, accuracy of the survey mask geometry representation, etc.  These are the quantities which in many cases have already been specified in the DESC SRD, or at least have been identified as needing a quantitative metric.  In most cases these requirements are statements about the performance of algorithms and pipe-lines and can be expected to improve in time.
+
+\item Designing and supplying the specific tests (including code) which can evaluate these metrics.
+
+\item Establishing a structure from which DESC members can contribute to validation studies specifically targeted at dark energy science, thus making a clear case for why work during the commissioning period should be supported by the agencies for those members.
+  
+\end{itemize}
+
+The work on this DESC technical note will be done in the open and work will be visible to the other LSST science collaborations.  When complete, we will make our recommendations and tests available to the LSST project for inclusion in the commissioning effort.
+
 \section{Summary of Planned Project Tests}
 \label{sec:project-tests}
+
+{\bf \it Note: If you would like to read (for example) the project
+  document LSE-79, you can use the URL: https://ls.st/LSE-79.}
 
 The LSST Project has a well defined commissioning plan~\cite{LSE-79} and is planning on verifying that the instrument is operating as designed.  These requirements are specified in a set of project documents ( e.g., OSS~\cite{LSE-30}, LSR~\cite{LSE-29}, Project SRD~\cite{LPM-17}). The project understands that the formal verification requirements are not exhaustive and welcomes input on validation studies, i.e., test specifications that go beyond the normative requirements. The Project also welcomes input on the specific observations that could be done during commissioning. It can, however, not guarantee that all suggestions will be implemented.
 
@@ -121,6 +154,13 @@ There may be other tests that are not currently covered by the science cases abo
 \subsection{End-to-End and other tests}
 \subsection{Photometric Calibration}
 \subsection{Sensor related tests}
+
+\subsection{Observing Strategy related tests}
+
+There may be recommendations from the DESC OSTF that would be good to actually test during the commissioning period such as strategies for footprint or exposure time.
+
+{\it We will wait until after the observing strategy white paper has been turned in to engage with this work}
+
 
 \appendix
 \section{Test Templates}
