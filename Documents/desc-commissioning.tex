@@ -7,6 +7,8 @@
 %\usepackage{graphicx}
 %\usepackage{xspace}
 
+\newcommand{\KB}[1]{{\textcolor{orange}{(KB: #1)}}}
+
 \begin{document}
 
 \title{DESC Commissioning Technical Note}
@@ -15,7 +17,10 @@
 
 \begin{abstract}
 
-  This DESC note presents validation tests and a set of suggested fields/observation strategies that the LSST commissioning team could employ during both the ComCam and LSST Camera commissioning periods.  On-sky commissioning observations are planned during all seasons of the year and will test the as-built system to confirm that DESC science goals can being either be met as is or suggest modifications in software and/or strategy.  Many of the tests are based on requirements as specified in the DESC SRD~\cite{DESC-SRD}.  Detailed descriptions of the tests including associated code are described.  
+  This DESC note presents validation tests and a set of suggested fields/observation strategies that the LSST commissioning team could employ during both the ComCam and LSST Camera commissioning periods. 
+  \KB{This wording of this sentence makes it sound like DESC is somewhat detached.}
+  On-sky commissioning observations are planned during all seasons of the year and will test the performance of the as-built system. 
+  Commissioning is an early opportunity to test whether DESC science goals can being either be met as is, and suggest modifications in software and/or strategy.  Many of the tests are based on requirements as specified in the DESC SRD~\cite{DESC-SRD}.  Detailed descriptions of the tests including associated code are described.  
   
  \end{abstract}
 
@@ -94,7 +99,7 @@ If you were writing a DESC paper, what plot would you put in into your paper to 
 
 As a start, we would like each group to gather requirements necessary to do their science.  Many of the requirements we need are already specified or listed in the DESC SRD; and, to help you start, in each section below some requirements taken from the DESC SRD are listed for each probe.  You can use these DESC SRD requirements in each section as a starting point, but you might want to remove them if you think the tests are not accessible during the commissioning period. You will likely want to add requirements based on the suggestions in the SRD appendices.   Those appendices list many requirements for which we should have specific requirements but have not yet calculated numbers.   Additionally, your working group will likely come up with new requirements based on (fro example) pixel level requirements that may not be specified in the SRD.
 
-{\it Instructions: For each group start by writing and introduction for your section of what you would like to test.  Then, begin to write down requirements that you think are necessary for Dark Energy Science that will not be addressed in the normative project commissioning plan.  Are there other important additional requirements you think we should address not in ether the DESC SRD or associated project documents?  If so, let's try to write down those tests also.
+{\it Instructions: For each group start by writing an introduction for your section of what you would like to test.  Then, begin to write down requirements that you think are necessary for Dark Energy Science that will not be addressed in the normative project commissioning plan.  Are there other important additional requirements you think we should address not in ether the DESC SRD or associated project documents?  If so, let's try to write down those tests also.
 
 As a next step: consider what samples would be necessary to characterize the instrument and software performance and then, based on some of the guidelines in Appendix A., try to outline tests that would correspond to each requirement you wrote down. }
 
